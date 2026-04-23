@@ -17,6 +17,17 @@ const Reserva = mongoose.model("Reserva", reservasSchema)
 
 
 
+
+
+
+async function name(params) {
+    
+}
+async function obtenerReservaPorId(id){
+    return await Reserva.findById(id);
+}
+
+
 //funciones personalizadas
 async function crearReserva(reserva){
     const reserva = new Reserva(reserva)

@@ -11,6 +11,7 @@ router.post('registro',registrar);
 router.post('login', login);
 
 
+
 router.get('/', (req, res) => {
     res.send('Obtener todos los usuarios');
 });
