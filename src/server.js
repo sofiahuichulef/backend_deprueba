@@ -1,3 +1,6 @@
+//load env
+process.loadEnvFile();
+
 const app = require('./app');
 const { connectDB } = require('./database/mongoose');
 const PORT = process.env.PORT || 3000;

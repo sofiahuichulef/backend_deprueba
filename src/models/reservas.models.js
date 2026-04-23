@@ -11,18 +11,18 @@ const reservasSchema = new mongoose.Schema({
 })
 
 
-
 //model 
 const Reserva = mongoose.model("Reserva", reservasSchema)
 
 
-
-
-
-
-async function name(params) {
+//obtener todas las reservas
+async function obtenerTodasLasReservas() {
+    return await Reserva.find({}).populate('espacioId');
+    
     
 }
+
+
 async function obtenerReservaPorId(id){
     return await Reserva.findById(id);
 }
@@ -36,4 +36,18 @@ async function crearReserva(reserva){
 
 async function obtenerReservas(){
     return await Reserva.find({});
+}
+
+async function eliminarReserva(id){
+    return await Reserva.findByIdAndDelete(id);
+}
+
+
+
+module.exports = {
+    obtenerTodasLasReservas,
+    obtenerReservaPorId,
+    crearReserva,
+    obtenerReservas,
+    eliminarReserva
 }

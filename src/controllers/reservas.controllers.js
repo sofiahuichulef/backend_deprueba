@@ -9,10 +9,11 @@ const
 
 const crearReserva = async (req, res, next) =>({
 
-    const { espacioId, fecha, horaInicio, horaFin } = req.body;
+    
 
     try {
-        const nuevaReserva = await crearReserva({ espacioId, fecha, horaInicio, horaFin });
+         const { usuario, espacioId, fecha, horaInicio, horaFin } = req.body;
+
         res.status(201).json(nuevaReserva);
     } catch (error) {
         next(error);
